@@ -32,6 +32,8 @@ const appStateReducer = (state = initialState, action: Action): AppState => {
         isError: true,
         errorMessage: payload?.errorMessage ? payload?.errorMessage : '',
       };
+    default:
+      return state;
   }
 };
 
