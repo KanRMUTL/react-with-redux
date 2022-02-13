@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
 
@@ -9,10 +9,11 @@ interface Props {
 const Loading: FC<Props> = ({ children }) => {
   const appState = useSelector((state: RootState) => state.appState);
 
-  return appState.isLoading ? (
-    <h2>Fetching data from API...</h2>
-  ) : (
-    <>{children}</>
+  return (
+    <>
+      {appState.isLoading && <h1>Fetching data...</h1>}
+      {children}
+    </>
   );
 };
 

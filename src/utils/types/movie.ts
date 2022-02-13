@@ -14,7 +14,7 @@ export enum Status {
 
 export interface Movie {
   adult: boolean;
-  backdrop_path: string | null;
+  backdrop_path: string;
   belongs_to_collection: null;
   budget: number;
   geners: Gener[];

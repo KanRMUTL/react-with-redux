@@ -1,6 +1,7 @@
 import React, { ReactNode, FC } from 'react';
 import Navbar from '../Navbar';
 import menuList from 'constant/menuList';
+import { Wrapper } from './styled';
 
 interface Props {
   children: ReactNode;
@@ -8,12 +9,12 @@ interface Props {
 
 const AppContainer: FC<Props> = ({ children }) => {
   return (
-    <div>
+    <Wrapper>
       <header>
         <Navbar menuList={menuList} />
       </header>
       <article>{children}</article>
-    </div>
+    </Wrapper>
   );
 };
 

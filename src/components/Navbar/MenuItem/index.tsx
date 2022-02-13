@@ -1,15 +1,16 @@
 import React, { FC } from 'react';
-import { Menu } from 'types/Menu';
-import { Link } from 'react-router-dom';
+import { Menu } from 'utils/types/Menu';
+import { MenuLink } from './styled';
+
 interface Props {
   menu: Menu;
 }
 
 const MenuItem: FC<Props> = ({ menu }) => {
   return (
-    <li className={menu.active ? 'active' : ''}>
-      <Link to='#'>{menu.name}</Link>
-    </li>
+    <MenuLink to='#' active={menu.active}>
+      {menu.name}
+    </MenuLink>
   );
 };
 

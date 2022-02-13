@@ -1,19 +1,18 @@
 import React, { FC } from 'react';
-import { Menu } from 'types/Menu';
+import { Menu } from 'utils/types/Menu';
 import MenuItem from './MenuItem';
+import { Wrapper } from './styled';
 interface Props {
   menuList: Menu[];
 }
 
 const Navbar: FC<Props> = ({ menuList }) => {
   return (
-    <nav>
-      <ul>
-        {menuList.map((menu) => (
-          <MenuItem key={menu.name} menu={menu} />
-        ))}
-      </ul>
-    </nav>
+    <Wrapper>
+      {menuList.map((menu) => (
+        <MenuItem key={menu.name} menu={menu} />
+      ))}
+    </Wrapper>
   );
 };
 

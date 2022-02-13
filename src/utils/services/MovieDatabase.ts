@@ -1,5 +1,5 @@
 import MainApi from './MainApi';
-import { Movie } from 'types/movie';
+import { Movie } from 'utils/types/movie';
 
 export interface Result {
   results: Movie;
