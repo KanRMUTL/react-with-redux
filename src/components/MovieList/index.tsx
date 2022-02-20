@@ -10,7 +10,7 @@ const MovieList: FC<Props> = ({ movies }) => {
   return (
     <Wrapper>
       {movies.map((movie) => (
-        <MovieItem movie={movie} />
+        <MovieItem key={movie.id} movie={movie} />
       ))}
     </Wrapper>
   );

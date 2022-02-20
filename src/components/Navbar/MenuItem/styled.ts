@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 interface MenuLinkProps {
-  active: boolean;
+  active: string;
 }
 
 const MenuLink = styled(Link)<MenuLinkProps>`
@@ -10,7 +10,7 @@ const MenuLink = styled(Link)<MenuLinkProps>`
   box-sizing: content-box;
   border-bottom: 3px solid #ffffff;
 
-  ${({ active }) => active && `border-bottom: 3px solid #3e78cf;`}
+  ${({ active }) => active === 'true' && `border-bottom: 3px solid #3e78cf;`}
 
   :link {
     text-decoration: none;

@@ -8,7 +8,7 @@ interface Props {
 
 const MenuItem: FC<Props> = ({ menu }) => {
   return (
-    <MenuLink to='#' active={menu.active}>
+    <MenuLink to='#' active={menu.active.toString()}>
       {menu.name}
     </MenuLink>
   );
