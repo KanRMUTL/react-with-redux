@@ -9,11 +9,18 @@ export interface Result {
 }
 
 class MovieDatabase extends MainApi {
+  public path = {
+    popular: 'movie/popular',
+    trending: 'trending/{media_type}/{time_window}',
+    tv: 'tv/airing_today',
+    nowPlaying: 'movie/now_playing',
+  };
+
   public constructor() {
     super();
   }
 
-  public getPopular = this.instance.get<Result>('movie/popular');
+  public getMovies = (path: string) => this.instance.get<Result>(path);
 }
 
 export default MovieDatabase;
