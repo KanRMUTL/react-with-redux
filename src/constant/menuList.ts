@@ -5,22 +5,22 @@ const menuList: Menu[] = [
   {
     name: 'Popular',
     active: true,
-    to: routePath.home,
+    path: routePath.home,
   },
   {
     name: 'Trending',
     active: false,
-    to: routePath.trending,
+    path: routePath.trending,
   },
   {
     name: 'TV',
     active: false,
-    to: routePath.tv,
+    path: routePath.tv,
   },
   {
     name: 'Playing Now',
     active: false,
-    to: routePath.playingNow,
+    path: routePath.playingNow,
   },
 ];
 

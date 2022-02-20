@@ -1,5 +1,5 @@
 export interface Menu {
   name: string;
   active: boolean;
-  to: string;
+  path: string;
 }
