@@ -10,27 +10,26 @@ interface Props {
 const MoviesHook = ({ movie, path }: Props) => {
   const { dispatch } = AppReducerHook();
 
-  const fetchMovies = () => () => {
+  const fetchMovies = () => async () => {
     dispatch({ type: Actions.FETCHING });
-    setTimeout(async () => {
-      try {
-        const data = await movie.getMovies(path);
-        dispatch({
-          type: Actions.SUCCESS,
-          payload: {
-            movies: data.results,
-          },
-        });
-      } catch (error) {
-        console.log(error);
-        dispatch({
-          type: Actions.ERROR,
-          payload: {
-            errorMessage: error,
-          },
-        });
-      }
-    }, 1000);
+
+    try {
+      const data = await movie.getMovies(path);
+      dispatch({
+        type: Actions.SUCCESS,
+        payload: {
+          movies: data.results,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+      dispatch({
+        type: Actions.ERROR,
+        payload: {
+          errorMessage: error,
+        },
+      });
+    }
   };
 
   return {

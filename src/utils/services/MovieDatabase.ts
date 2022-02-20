@@ -11,7 +11,7 @@ export interface Result {
 class MovieDatabase extends MainApi {
   public path = {
     popular: 'movie/popular',
-    trending: 'trending/{media_type}/{time_window}',
+    trending: 'trending/all/week',
     tv: 'tv/airing_today',
     nowPlaying: 'movie/now_playing',
   };
