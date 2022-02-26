@@ -4,13 +4,14 @@ import { Movie } from 'utils/types/movie';
 import { Wrapper } from './styled';
 interface Props {
   movies: Movie[];
+  onClickMovie: (movie: Movie) => void;
 }
 
-const MovieList: FC<Props> = ({ movies }) => {
+const MovieList: FC<Props> = ({ movies, onClickMovie }) => {
   return (
     <Wrapper>
       {movies.map((movie) => (
-        <MovieItem key={movie.id} movie={movie} />
+        <MovieItem key={movie.id} movie={movie} onClickMovie={onClickMovie} />
       ))}
     </Wrapper>
   );

@@ -6,6 +6,7 @@ const Wrapper = styled.div`
 
 const Poster = styled.img`
   width: 100%;
+  cursor: pointer;
 `;
 
 export { Wrapper, Poster };
